@@ -2,12 +2,48 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import StudentDomen.AverageAge;
+import StudentDomen.Emploee;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
 import StudentDomen.StudentSteam;
+import StudentDomen.Teacher;
 
 public class App {
     public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Алексей", "Сидоров", 19, 12));
+        students.add(new Student("Екатерина", "Иванова", 22, 8));
+        students.add(new Student("Андрей", "Петров", 20, 5));
+        students.add(new Student("Мария", "Смирнова", 21, 2));
+        students.add(new Student("Дмитрий", "Чернов", 19, 9));
+
+        List<Teacher> teachers = new ArrayList<>();
+        teachers.add(new Teacher("Александр", "Соколов", 30, "Преподаватель", 12));
+        teachers.add(new Teacher("Анна", "Павлова", 35, "Кандидат наук", 5));
+        teachers.add(new Teacher("Михаил", "Иванов", 38, "Степень 2", 8));
+        teachers.add(new Teacher("Елена", "Козлова", 31, "Преподаватель", 19));
+         
+        List<Emploee> emploees = new ArrayList<>();
+        emploees.add(new Emploee("Елена", "Петрова", 51, "Администратор", 9));
+        emploees.add(new Emploee("Алексей", "Соколов", 29, "Библиотекарь", 12));
+        emploees.add(new Emploee("Михаил", "Иванов", 42, "Охранник", 7));
+        emploees.add(new Emploee("Александр", "Семенов", 45, "Исследователь", 10));
+
+        AverageAge<Student> studentAverageAge = new AverageAge<>();
+        double averageAgeStudents = studentAverageAge.averAge(students);
+        System.out.println("Средний возраст студента: " + averageAgeStudents);
+
+        AverageAge<Teacher> teacherAverageAge = new AverageAge<>();
+        double averageAgeTeachers = teacherAverageAge.averAge(teachers);
+        System.out.println("Средний возраст учителя: " + averageAgeTeachers);
+
+        AverageAge<Emploee> emploeeAverageAge = new AverageAge<>();
+        double averageAgeEmploees = emploeeAverageAge.averAge(emploees);
+        System.out.println("Средний возраст сотрудника: " + averageAgeEmploees);
+
+
+        /*
         Student s1 = new Student("Мария", "Иванова", 21, 12);
         Student s2 = new Student("Алексей", "Смирнов", 19, 3);
         Student s3 = new Student("Екатерина", "Петрова", 20, 6);
@@ -62,6 +98,6 @@ public class App {
                 System.out.println(g);
             }
         }
-
+        */
     }
 }
